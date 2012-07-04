@@ -1,0 +1,11 @@
+1. Funkcija sto kje printa bufer so odredena golemina vo format nx16.
+
+2. Funkcija sto kje ja vrati vrednosta na eden broj zapisan vo little endian format.
+
+3. Konvertiraj niza od karakteri od lower-case vo UPPER-CASE so koristenje na nekoja od aritmetickite operacii.
+
+4. Funkcija so API "int FunkName(void)" koja na sekoj 25-ti povik kje ja vrakja vrednosta za broj na povici a inache da vrakja 0.
+
+5. Funkcija koja sto kje vrshi operacija delenje so 2 na cel broj koristejki shift operatori.
+
+6. Konverzija na string od UTF-8 vo w_char format (i obratno).

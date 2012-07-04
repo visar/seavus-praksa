@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-inline int deliso2(int);
+inline int deliSo2(int);
 
 int main(int argc, char * argv[])
 {
@@ -13,7 +13,7 @@ for (brojac = 0; brojac <= prag; brojac++)
 return 0;
 }
 
-int deliso2(int arg)
+int deliSo2(int arg)
 {
     return arg >> 1;
 }

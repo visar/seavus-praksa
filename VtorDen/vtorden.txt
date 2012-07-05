@@ -1,0 +1,25 @@
+1. Kreiraj i popolni gi so random data bufferi so golemina od 64 bytes od tip:
+
+   void *buffer;
+   char *buffer;
+   int *buffer;
+   long *buffer;
+   long long *buffer;
+
+   Sodrzhinata na sekoj od ovie bufferi isprintaj ja vo sledniov format:
+
+   0xFF;
+   0xFFFF;
+   0xFFFFFFFF;
+
+   Primer:
+   Buffer1(HEX):
+   23FF0D48EADEBB8C
+
+   Print:
+   0x23; 0xFF; 0x0D; 0x48; 0xEA; 0xDE; 0xBB; 0x8C.
+   0x23FF; 0xDD48; 0xEADE; 0xBB8C.
+   0x23FF0D48; 0xEADEBB8C.
+
+2. Funkcija koja na vnesen cel broj kje isprinta binarna reprezentacija od istiot.
+   Napomena: koristi & i >>. Primer: 210 -> 11010010

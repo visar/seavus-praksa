@@ -8,6 +8,7 @@ void print(void *, size_t);
 int main()
 {
     /* void * buffer1 = (void *)calloc(64,sizeof(char)); */
+    /* void * tmp = buffer1; */
     char buffer2[64];
     int buffer3[64];
     long buffer4[64];
@@ -17,9 +18,12 @@ int main()
 
     /* for(brojac = 64; brojac; brojac--) */
     /* { */
-    /*     buffer1[brojac] = rand() * CHAR_MAX + 1; */
+    /*     *buffer1 = (char)(rand() * CHAR_MAX + 1); */
+    /*     buffer1++; */
+    /*     /\* buffer1[brojac] = rand() * CHAR_MAX + 1; *\/ */
     /* } */
 
+    /* buffer1 = tmp; */
 
     for(brojac = 64; brojac; brojac--)
     {
@@ -33,12 +37,12 @@ int main()
 
     for(brojac = 64; brojac; brojac--)
     {
-        buffer3[brojac] = (long)(rand() * LONG_MAX + 1);
+        buffer4[brojac] = (long)(rand() * LONG_MAX + 1);
     }
 
     for(brojac = 64; brojac; brojac--)
     {
-        buffer2[brojac] = (long long)(rand() * LLONG_MAX + 1);
+        buffer5[brojac] = (long long)(rand() * LLONG_MAX + 1);
     }
 
 
@@ -64,6 +68,8 @@ void print(void * buffer, size_t size)
         len--;
     }
 
+    putchar('\n');
+
     unsigned short * tmp2 = (unsigned short *) buffer;
 
     len = size;
@@ -73,6 +79,8 @@ void print(void * buffer, size_t size)
         tmp2++;
         len--;
     }
+
+    putchar('\n');
 
     unsigned int * tmp3 = (unsigned int *) buffer;
 

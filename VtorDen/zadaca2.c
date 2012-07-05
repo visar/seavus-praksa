@@ -5,9 +5,17 @@ void toBinary(int);
 
 int main(int argc, char * argv[])
 {
-    if (!atoi(argv[1]))
+    int n = atoi(argv[1]);
+    if (!n)
     {
         printf("0\n");
+        return 0;
+    }
+    if (n < 0)
+    {
+        putchar('1');
+        toBinary(n&~(1<<31));
+        putchar('\n');
         return 0;
     }
     toBinary(atoi(argv[1]));

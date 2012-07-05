@@ -5,6 +5,11 @@ void toBinary(int);
 
 int main(int argc, char * argv[])
 {
+    if (!atoi(argv[1]))
+    {
+        printf("0\n");
+        return 0;
+    }
     toBinary(atoi(argv[1]));
     putchar('\n');
 

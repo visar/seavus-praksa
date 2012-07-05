@@ -77,7 +77,7 @@ void print(void * buffer, size_t size)
     {
         printf("0x%04x; ", *tmp2);
         tmp2++;
-        len--;
+        len -= 2;
     }
 
     putchar('\n');
@@ -89,7 +89,7 @@ void print(void * buffer, size_t size)
     {
         printf("0x%08x; ", *tmp3);
         tmp3++;
-        len--;
+        len -= 4;
     }
 
     putchar('\n');

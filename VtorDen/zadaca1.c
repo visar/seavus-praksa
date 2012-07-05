@@ -7,7 +7,7 @@ void print(void *, size_t);
 
 int main()
 {
-    /* void * buffer1 = (void *)calloc(64,sizeof(char)); */
+    /* void * buffer1 = calloc(64,sizeof(void)); */
     /* void * tmp = buffer1; */
     char buffer2[64];
     int buffer3[64];
@@ -18,7 +18,7 @@ int main()
 
     /* for(brojac = 64; brojac; brojac--) */
     /* { */
-    /*     *buffer1 = (char)(rand() * CHAR_MAX + 1); */
+    /*     *buffer1 = rand() * CHAR_MAX + 1; */
     /*     buffer1++; */
     /*     /\* buffer1[brojac] = rand() * CHAR_MAX + 1; *\/ */
     /* } */
@@ -46,7 +46,7 @@ int main()
     }
 
 
-    /* print(buffer1, sizeof(buffer1)); */
+    print((void *)buffer2, sizeof(buffer2));
     print(buffer2, sizeof(buffer2));
     print(buffer3, sizeof(buffer3));
     print(buffer4, sizeof(buffer4));

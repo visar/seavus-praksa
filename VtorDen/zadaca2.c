@@ -18,6 +18,7 @@ int main(int argc, char * argv[])
         putchar('\n');
         return 0;
     }
+    putchar('0');
     toBinary(atoi(argv[1]));
     putchar('\n');
 

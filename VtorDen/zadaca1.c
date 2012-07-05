@@ -79,7 +79,7 @@ void print(void * buffer, size_t size)
 	len = size;
 	while (len)
 	{
-		printf("0x%08X; ", (*tmp3 & 0x000000ff) << 24 | (*tmp3 & 0x0000ff00) << 8 | (*tmp3 & 0x00ff0000) >> 8| (*tmp3 & 0xff000000) >> 24);
+		printf("0x%08X; ", (*tmp3 & 0x000000ff) << 24 | (*tmp3 & 0x0000ff00) << 8 | (*tmp3 & 0x00ff0000) >> 8 | (*tmp3 & 0xff000000) >> 24);
 		tmp3++;
 		len -= 4;
 	}

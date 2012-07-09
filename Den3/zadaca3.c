@@ -7,11 +7,16 @@ int main(int argc, char * argv[])
 	unsigned M = 1, tmp;
 	while (N--)
 	{
-		tmp = M;
-		while (tmp--)
+		tmp = M-1;
+		do
 		{
 			putchar('*');
 		}
+		while (tmp--);
+		/* while (tmp--) */
+		/* { */
+		/*	putchar('*'); */
+		/* } */
 		putchar('\n');
 		M++;
 	}

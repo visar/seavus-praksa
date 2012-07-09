@@ -26,7 +26,7 @@ char * int2str(int num, int w)
 	size += sign;
 	if (size >= w)
 	{
-		return int2str2(num);
+		return sign ? int2str2(~ num + 1) : int2str2(num);
 	}
 	char * str = (char *)malloc(w * sizeof(char) + 1);
 

@@ -1,0 +1,32 @@
+Zad5.1 
+Da se napishe programa koja kako vlez ke prima string koj ke pretstavuva matematichka operacija na 2 decimalni broj,
+a kako izlez ke se pecati rezultatot od taa operacija. 
+Posle dobivanjeto na rezultatot, povtorno treba da bideme vo moznost da vneseme nova operacija.  
+Primer.
+a. Presmetaj:
+3.5+5.5
+Rezultat=6.0
+b. Presmetaj:
+3.5*5.5
+Rezultat=19.25
+c. Presmetaj:
+-3.5-5.5
+Rezultat=8
+
+Operacii koi treba da se implementiraat:
++,-,*,/,^,
+
+Zad5.2
+Da se prosiri programata od 5.1 so primanje na vlez na 3 decimalni broevi.
+- Vo poednostavna varijanta kako vlez da se vnesuva samo eden tip na operacija
+Pr. samo + ili samo * (3+5.5+6.25) ili (2.8*4.2*7)
+
+- Vo poslozenata varianta programata treba da e vo moznost da presmeta izraz vo koj
+se upotrebuvaat razlichni matematicki operacii, kade shto ke se zeme vo predvid i
+prioritetot na nivno izvrshuvanje (^ pred *,/, pred +,-)
+Pr1. -3.5+5.5*2.5
+Rez1: 10.25
+Pr2. 5*2^3.5
+Rez2: 56.56
+
+

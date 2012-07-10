@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #include <ctype.h>
 
-typedef char * STR;
-
 int words(char *);
 int chop(char *, char * []);
 int nLetters(const char *);
@@ -11,6 +9,10 @@ int strCmp(const void *, const void *);
 
 int main(int argc, char * argv[])
 {
+	if(argc<2){
+		printf("Treba da se povika: %s \"string\"\n",argv[0]);
+		exit(EXIT_FAILURE);
+	}
 	int num, i;
 	num = words(argv[1]);
 	char ** word;
@@ -23,7 +25,7 @@ int main(int argc, char * argv[])
 		printf("%s\n", word[i++]);
 	}
 	free(word);
-	return 0;
+	return EXIT_SUCCESS;
 }
 
 int words(char * str)

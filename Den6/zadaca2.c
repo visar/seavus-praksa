@@ -10,8 +10,8 @@ int main(int argc, char * argv[])
 	printf("Vnesi niza od karakteri, ke vratam hash od taa niza:\n");
 	while (getline(&str, (size_t *)&nbytes, stdin) > 0)
 	{
-		printf("Vnesi niza od karakteri, ke vratam hash od taa niza:\n");
 		printf("%d\n", hash(str));
+		printf("Vnesi niza od karakteri, ke vratam hash od taa niza:\n");
 	}
 
 	return 0;

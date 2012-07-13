@@ -16,18 +16,13 @@ void print(karta *);
 karta deli(karta *);
 void hand(karta *, karta *);
 int par(karta *);
-int dvaPara(karta *p);
-int triling(karta *p);
-int cetiri(karta *p);
-int boja(karta *p);
-int kenta(karta *p);
+int dvaPara(karta *);
+int triling(karta *);
+int cetiri(karta *);
+int boja(karta *);
+int kenta(karta *);
 
-int compare (const void * a, const void * b)
-{
-	karta * sa = (karta *) a;
-	karta * sb = (karta *) b;
-	return (sa->broj - sb->broj);
-}
+int compare (const void *, const void *);
 
 int main(int argc, char * argv[])
 {
@@ -181,6 +176,14 @@ int main(int argc, char * argv[])
 		tmp[brojac] = 0;
 	}
 
+	meshaj(karti);
+	printf("\nMesanje karti\n");
+
+	brojac = 52;
+	while (brojac--)
+	{
+		tmp[brojac] = 0;
+	}
 
 	printf("\n\nDelenje karti na dva igraci:\n");
 	karta raka1[5], raka2[5];
@@ -433,4 +436,11 @@ void print(karta *p)
 	{
 		printf("%d: %d %d\n", brojac, p[brojac].broj, p[brojac].boja);
 	}
+}
+
+int compare (const void * a, const void * b)
+{
+	karta * sa = (karta *) a;
+	karta * sb = (karta *) b;
+	return (sa->broj - sb->broj);
 }

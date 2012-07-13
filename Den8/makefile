@@ -1,4 +1,4 @@
-NAME = zadaca3
+NAME = zadaca6
 CC = gcc
 FLAGS = -g3 -Wall -Wextra -O2 -o
 

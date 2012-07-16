@@ -27,6 +27,7 @@ void sort_tekovnaPlata(vraboten *, int);
 void sort_minataPlata(vraboten *, int);
 void koregiraj_vraboten(vraboten *, int, int);
 void koregiraj_kredibilnost(vraboten *, int);
+void printMenu();
 
 int main(int argc, char * argv[])
 {
@@ -81,47 +82,64 @@ int main(int argc, char * argv[])
 	}
 	while (!strcmp(odgovor,"DA"));
 
-	print(vraboteni, brVraboteni);
-
-	printf("\nSortirani spored kredibilnost:\n");
-	sort_kred(vraboteni, brVraboteni);
-	printCustom(vraboteni, brVraboteni, 'k');
-
-	printf("\nSortirani spored tekovna plata:\n");
-	sort_tekovnaPlata(vraboteni, brVraboteni);
-	printCustom(vraboteni, brVraboteni, 't');
-
-	printf("\nSortirani spored poranesna plata:\n");
-	sort_minataPlata(vraboteni, brVraboteni);
-	printCustom(vraboteni, brVraboteni, 'm');
-
+	char ch;
 	int korekcija;
-	printf("\nKoj vraboten sakas da go koregiras:\n");
-	if (!scanf("%d", &korekcija))
-		exit(EXIT_FAILURE);
-	getchar();
-	/* korekcija = korekcija < brVraboteni ? korekcija : brVraboteni-1; */
-	/* korekcija = korekcija >= 0 ? korekcija : 0; */
-	koregiraj_vraboten(vraboteni, brVraboteni, korekcija);
 
-	print(vraboteni, brVraboteni);
+	printMenu();
 
-	printf("\nSortirani spored kredibilnost:\n");
-	sort_kred(vraboteni, brVraboteni);
-	printCustom(vraboteni, brVraboteni, 'k');
+	while((ch = getchar()))
+	{
+		getchar();
+		switch(ch)
+		{
+		case '0':
+			printf("\nLista na site vraboteni:\n");
+			print(vraboteni, brVraboteni);
+			break;
+		case '1':
+			printf("\nSortirani spored kredibilnost:\n");
+			sort_kred(vraboteni, brVraboteni);
+			printCustom(vraboteni, brVraboteni, 'k');
+			break;
+		case '2':
+			printf("\nSortirani spored tekovna plata:\n");
+			sort_tekovnaPlata(vraboteni, brVraboteni);
+			printCustom(vraboteni, brVraboteni, 't');
+			break;
+		case '3':
+			printf("\nSortirani spored poranesna plata:\n");
+			sort_minataPlata(vraboteni, brVraboteni);
+			printCustom(vraboteni, brVraboteni, 'm');
+			break;
+		case '4':
+			printf("\nKoj vraboten sakas da go koregiras:\n");
+			if (!scanf("%d", &korekcija))
+				exit(EXIT_FAILURE);
+			getchar();
+			/* korekcija = korekcija < brVraboteni ? korekcija : brVraboteni-1; */
+			/* korekcija = korekcija >= 0 ? korekcija : 0; */
+			koregiraj_vraboten(vraboteni, brVraboteni, korekcija);
+			printf("Koregiran vraboten so id: %d\n", korekcija);
+			break;
+		case '5':
+			koregiraj_kredibilnost(vraboteni, brVraboteni);
+			printf("Koregirana e kredibilnosta na site vraboteni.\n");
+			break;
+		case '6':
+			printf("Prijatno!\n");
+			break;
+		default:
+			printf("Nema takva opcija! Probaj pak!\n");
+			break;
+		}
+		if (ch == '6')
+			break;
 
-	printf("\nSortirani spored tekovna plata:\n");
-	sort_tekovnaPlata(vraboteni, brVraboteni);
-	printCustom(vraboteni, brVraboteni, 't');
-
-	printf("\nSortirani spored poranesna plata:\n");
-	sort_minataPlata(vraboteni, brVraboteni);
-	printCustom(vraboteni, brVraboteni, 'm');
-
-	koregiraj_kredibilnost(vraboteni, brVraboteni);
-	print(vraboteni, brVraboteni);
+		printMenu();
+	}
 
 	free(vraboteni);
+
 	return EXIT_SUCCESS;
 }
 
@@ -323,4 +341,19 @@ void koregiraj_kredibilnost(vraboten vr[], int br)
 			vr[brojac].poranesnaPlata = tmp;
 		}
 	}
+}
+
+void printMenu()
+{
+	printf("\n\n%61s\n", "-------------------------------------------------------------");
+	printf("%61s\n\n", "*************************************************************");
+	printf("%10s %50s", "0)", " Pecati gi site vraboteni\n");
+	printf("%10s %50s", "1)", " Sortiraj po kredibilnost\n");
+	printf("%10s %50s", "2)", " Sortiraj po tekovna plata\n");
+	printf("%10s %50s", "3)", " Sortiraj po poraneshna plata\n");
+	printf("%10s %50s", "4)", " Koregiraj vraboten preku ID\n");
+	printf("%10s %50s", "5)", " Koreigraj ja kredibilnosta na site vraboteni\n");
+	printf("%10s %50s", "6)", " Izlez\n");
+	printf("\n%61s\n", "*************************************************************");
+	printf("%61s\n\n", "-------------------------------------------------------------");
 }

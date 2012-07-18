@@ -185,6 +185,7 @@ int delete(tree **t, int val)
 		{
 			*t = p->lchild;
 			free(p);
+			p = NULL;
 			return 0;
 		}
 
@@ -204,6 +205,7 @@ int delete(tree **t, int val)
 		}
 
 		free(p);
+		p = NULL;
 		return 0;
 	}
 
@@ -213,6 +215,7 @@ int delete(tree **t, int val)
 		{
 			*t = p->rchild;
 			free(p);
+			p = NULL;
 			return 0;
 		}
 
@@ -231,6 +234,7 @@ int delete(tree **t, int val)
 			parent->lchild = p->rchild;
 		}
 		free(p);
+		p = NULL;
 		return 0;
 	}
 

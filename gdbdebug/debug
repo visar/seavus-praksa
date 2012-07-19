@@ -1,0 +1,1 @@
+ arm-none-eabi-gdbtui --eval-command="target remote localhost:3333" main.out

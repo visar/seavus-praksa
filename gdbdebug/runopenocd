@@ -1,0 +1,1 @@
+xterm -e "openocd -f interface/olimex-arm-usb-ocd-h.cfg -f board/olimex_stm32_h103.cfg -c init -c reset" &
